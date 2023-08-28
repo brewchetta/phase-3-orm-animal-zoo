@@ -18,7 +18,7 @@ We have one model: `Animal` which shows the animals who occupy our zoo.
 To get started, run `pipenv install` while inside of this directory.
 
 Your tables have not been created yet. In order to build them, first use
-`python debug.py` and then use the class method `Show.create_table()`.
+`python debug.py` and then use the class method `Animal.create_table()`.
 
 Build out all of the methods listed in the deliverables. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
