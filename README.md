@@ -2,7 +2,7 @@
 
 For this mock challenge, we'll be working with a domain for a zoo.
 
-We have one model: `Animal` which shows the animals who occupy our zoo.
+We have two models: `Animal` which shows the animals who belong to a `Zoo`.
 
 ## Topics
 
@@ -17,10 +17,11 @@ We have one model: `Animal` which shows the animals who occupy our zoo.
 
 To get started, run `pipenv install` while inside of this directory.
 
-Your tables have not been created yet. In order to build them, first use
-`python debug.py` and then use the class method `Animal.create_table()`.
+Only one of the tables, `zoos` has been created so far. Additionally the `Zoo`
+class already has its required functionality and you won't have to build
+additional methods for it.
 
-Build out all of the methods listed in the deliverables. The methods are listed
+Build out all of the methods listed in the deliverables for `Animal`. The methods are listed
 in a suggested order, but you can feel free to tackle the ones you think are
 easiest. Be careful: some of the later methods rely on earlier ones.
 
@@ -47,13 +48,16 @@ build out any helper methods if needed.
 
 ### Initializers and Properties
 
+- `Animal classmethod create_table()`
+  - Creates an `animals` table with these columns: id (INTEGER), name (TEXT),
+  age (INTEGER), zoo_id (INTEGER)
 - `Animal __init__(name, age, id=None)`
   - `Animal` is initialized with a name (string) and an age (integer)
   - When initialized an Animal should have an id of None
   - Assume that Animals will always be initialized with the proper data types
 - `Animal __repr__()`
   - Returns the Animal instance in the format below:
-  - `Animal(id={id} name={name}, age={age})`
+  - `Animal(id={id} name={name}, age={age}, zoo_id={zoo_id})`
 - `Animal property age()`
   - Returns the `Animal`'s age
   - Age must be an integer greater than 0
@@ -72,6 +76,14 @@ build out any helper methods if needed.
 - `Animal classmethod query_all()`
   - Returns a list of Animal instances based on rows in the database
   - The return value ought to be a list of Animal instances
+
+### Association Properties
+
+- `Animal property zoo()`
+  - Returns the Zoo that the Animal is associated with as an instance
+  - If the Animal is not associated with a Zoo returns `None`
+  - When setting the zoo, if the argument is a `Zoo` instance it associates the
+  Animal with the zoo
 
 ### BONUS Methods
 
