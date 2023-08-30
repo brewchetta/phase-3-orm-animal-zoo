@@ -51,8 +51,9 @@ build out any helper methods if needed.
 - `Animal classmethod create_table()`
   - Creates an `animals` table with these columns: id (INTEGER), name (TEXT),
   age (INTEGER), zoo_id (INTEGER)
-- `Animal __init__(name, age, id=None)`
-  - `Animal` is initialized with a name (string) and an age (integer)
+- `Animal __init__(name, age, zoo_id, id=None)`
+  - `Animal` is initialized with a name (string), an age (integer), and a zoo_id
+  (integer)
   - When initialized an Animal should have an id of None
   - Assume that Animals will always be initialized with the proper data types
 - `Animal __repr__()`
